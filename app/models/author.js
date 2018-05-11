@@ -1,0 +1,14 @@
+import DS from 'ember-data';
+
+export default DS.Model.extend({
+  //Attributes
+  firstName: DS.attr('string'),
+  lastName: DS.attr('string'),
+  profilePicture: DS.attr('string'),
+  username: DS.attr('string'),
+  email: DS.attr('string'),
+
+  //Relations
+  posts: DS.hasMany('blog-post'),
+
+});

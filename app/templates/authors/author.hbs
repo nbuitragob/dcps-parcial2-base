@@ -1,1 +1,23 @@
+<h1>{{model.username}}</h1>
+<img src={{model.profilePicture}}>
+
+<br>
+<p>First Name: {{model.firstName}}</p>
+<p>Last Name: {{model.lastName}}</p>
+<p>Email: {{model.email}}</p>
+<p>Posts:</p>
+{{#if model.posts}}
+    {{#each model.posts as |post|}}
+        <div>
+            <p>Title: {{post.title}}</p>
+            <p>Published date: {{post.publishedAt}}</p>
+            <p>Contetnt: {{post.content}}</p>
+            <button type="button" {{action 'deletePost' post}}>Delete Post</button>
+            <br>
+        </div>
+    {{/each}}
+{{else}}
+    This author does not have posts
+{{/if}}
+
 {{outlet}}
